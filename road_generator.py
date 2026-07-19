@@ -6,11 +6,11 @@ def main():
     t = np.linspace(t_0, t_f, 3000)
     v = 30                              # Velocity
 
-    road = make_road(road_class="C")    # Generate the road
+    road = make_road(road_class="C", velocity=v)    # Generate the road
     
     # Plotting
     fig, ax1 = plt.subplots()
-    ax1.plot(t, road(t*v), label="road", color="gray")
+    ax1.plot(t, road(t), label="road", color="gray")
     ax1.set_ylim(-.2,.2)
     ax1.set_ylabel("Road Height (m)")
     ax1.set_xlabel("Time (s)")
@@ -18,7 +18,7 @@ def main():
     plt.show()
 
 
-def make_road(road_class="C"):
+def make_road(road_class="C", velocity=30.0):
     # Set seed for random number generator for reproducibility
     rng = np.random.default_rng(seed=41)
     # Pick Gd(n0) according to road class
@@ -36,7 +36,7 @@ def make_road(road_class="C"):
     def generate(x):
         road_height = 0
         for i in range(len(n)):
-            road_height += A[i] * np.sin(2 * np.pi * n[i] * x + phi[i])  # Sum all the waves
+            road_height += A[i] * np.sin(2 * np.pi * n[i] * x * velocity + phi[i])  # Sum all the waves
         return road_height
     
     return generate
