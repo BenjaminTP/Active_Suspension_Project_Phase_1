@@ -24,7 +24,7 @@ def make_road(road_class="C", velocity=30.0):
     # Pick Gd(n0) according to road class
     Gd_n0 = 1e-6 * {"A":16, "B":64, "C":256, "D":1024, "E":4096, "F":16384, "G":65536, "H":262144}[road_class] 
 
-    n_0, w, N = 0.1, 2.0, 1000                          # Set Gd(n) parameters
+    n_0, w, N = 0.1, 2.0, 300                           # Set Gd(n) parameters
     n_i, n_f = 10e-3, 2.0                               # Set range of frequencies to sum over. Refer to derivation chart
 
     n = np.linspace(n_i, n_f, N)                        # Set up range of frequencies
