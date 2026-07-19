@@ -20,7 +20,7 @@ def main():
 
 def make_road(road_class="C"):
     # Set seed for random number generator for reproducibility
-    rng = np.random.default_rng(seed=43)
+    rng = np.random.default_rng(seed=41)
     # Pick Gd(n0) according to road class
     Gd_n0 = 1e-6 * {"A":16, "B":64, "C":256, "D":1024, "E":4096, "F":16384, "G":65536, "H":262144}[road_class] 
 
