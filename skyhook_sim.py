@@ -78,9 +78,9 @@ def deriv(t, y):
 
 # Road height as a function of time
 def road(t):
-    t0, t1, H = 0.5, 0.7, 0.05
-    if t0 <= t and t <= t1:
-        return 0.5 * H * (1 - np.cos(2 * np.pi * (t - t0) / (t1 - t0)))
+    # t0, t1, H = 0.5, 0.7, 0.05
+    # if t0 <= t and t <= t1:
+    #     return 0.5 * H * (1 - np.cos(2 * np.pi * (t - t0) / (t1 - t0)))
     return 0.0
 
 
