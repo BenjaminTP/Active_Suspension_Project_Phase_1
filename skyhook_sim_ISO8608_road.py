@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from road_generator import make_road
+import time
 
 # Constants
 M1 = 30.0
@@ -11,15 +12,16 @@ K2 = 23550.0
 B = 1783.0
 C_SKY = 2175.0
 G = 9.81
-V = 14.0
+V = 28.0
 
 # Make the road. The road variable itself is a function that takes in time and returns height of the road
 road = make_road(road_class="C", velocity=V)
 
 
 def main():
-    t_0, t_f = 0, 3 # Time period to solve for
-    z0 = [0.0, 0.0, 0.0, 0.0] # Initial Conditions
+    start_time = time.time()
+    t_0, t_f = 0, 16.4          # Time period to solve for
+    z0 = [0.0, 0.0, 0.0, 0.0]   # Initial Conditions
 
     sol = solve_ivp(deriv, (t_0, t_f), z0, t_eval=np.linspace(t_0, t_f, 500), max_step=1e-3) # Solve the ODE
     
@@ -31,13 +33,14 @@ def main():
     # Solve body frequency, RMS body accel., and peak body accel.
     freq2 = solve_freq(x2, t)
 
-    mask = t > 0.5    # There is a jolt from the road generating below 0, so we ignore to get more accurate values
+    mask = t > 2.0    # There is a jolt from the road generating below 0, so we ignore to get more accurate values
     rms_a2 = np.sqrt(np.mean(a2[mask]**2))
     peak_a2 = np.max(np.abs(a2[mask]))
     print("---------------- Results ----------------")
     print(f"Body Frequency: {freq2:.3f} Hz")
     print(f"RMS Body Acceleration: {rms_a2:.3f} m/s^2, or {(rms_a2/G):.3f} g's")
     print(f"Peak Body Accleration: {peak_a2:.3f} m/s^2, or or {(peak_a2/G):.3f} g's")
+    print(f"Compute time: {(time.time()-start_time):.2f}s")
     print("-----------------------------------------")
 
     # Plotting
@@ -63,14 +66,13 @@ def main():
     ax2.legend()
 
     fig.tight_layout()
-    
+    plt.show(block=False)
+
     # Plot saving
     filename = input("Filename: ")
     if filename not in ["skip", "pass", "no", "exit", "test"]:
         plt.savefig(f"images/{filename}", dpi=150)
-
-    plt.show()
-
+    
 
 # Feed this into solve_ivp. 
 # Essentially you need t and y as parameters, and the function needs to return dy/dt.
