@@ -43,7 +43,7 @@ def main():
     print("---------------- Results ----------------")
     print(f"Body Frequency: {freq2:.3f} Hz")
     print(f"RMS Body Acceleration: {rms_a2:.3f} m/s^2, or {(rms_a2/G):.3f} g's")
-    print(f"Peak Body Accleration: {peak_a2:.3f} m/s^2, or {(peak_a2/G):.3f} g's")
+    print(f"Peak Body Acceleration: {peak_a2:.3f} m/s^2, or {(peak_a2/G):.3f} g's")
     print(f"Peak Suspension Travel: {peak_travel:.3f}mm")
     print(f"Peak Tire Deflection: {peak_tire:.3f}mm")
     print(f"Peak Actuator Force: {peak_force:.1f}N")
