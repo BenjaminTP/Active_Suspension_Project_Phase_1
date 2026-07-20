@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 from scipy.integrate import solve_ivp
 from road_generator import make_road
-import time
 
 # Constants
 M1 = 30.0
@@ -36,10 +36,17 @@ def main():
     mask = t > 2.0    # There is a jolt from the road generating below 0, so we ignore to get more accurate values
     rms_a2 = np.sqrt(np.mean(a2[mask]**2))
     peak_a2 = np.max(np.abs(a2[mask]))
+    peak_travel = np.max(np.abs((x2-x1)[mask]))*1000
+    peak_tire = np.max(np.abs((x1 - road(t))[mask]))*1000
+    peak_force = C_SKY * np.max(np.abs(v2[mask]))
+
     print("---------------- Results ----------------")
     print(f"Body Frequency: {freq2:.3f} Hz")
     print(f"RMS Body Acceleration: {rms_a2:.3f} m/s^2, or {(rms_a2/G):.3f} g's")
     print(f"Peak Body Accleration: {peak_a2:.3f} m/s^2, or {(peak_a2/G):.3f} g's")
+    print(f"Peak Suspension Travel: {peak_travel:.3f}mm")
+    print(f"Peak Tire Deflection: {peak_tire:.3f}mm")
+    print(f"Peak Actuator Force: {peak_force:.1f}N")
     print(f"Compute time: {(time.time()-start_time):.2f}s")
     print("-----------------------------------------")
 
