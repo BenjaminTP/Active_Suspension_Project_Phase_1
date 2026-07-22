@@ -12,4 +12,4 @@ I learned a ton from this project, and I wish to present my full end-to-end engi
 ### Project Scopes
 I decided to break this project up into two phases: phase 1 would consist of the initial research, learning, and simulations on a quarter car with real-world specs, while phase 2 would physically build out the real-world model based off of the work done in phase 1. 
 
-You are currently on the phase 1 repo. Check out the [phase 1 write-up here](phase1_writeup.md.)
+You are currently on the phase 1 repo. Check out the [phase 1 write-up here](phase1_writeup.md).
