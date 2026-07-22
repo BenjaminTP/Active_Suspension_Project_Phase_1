@@ -199,7 +199,7 @@ The sim will then plot the motion of body and wheel, as well as the body acceler
   <img src="Images/passive_cos_bump.png" width="48%">
   <img src="Images/passive_2cm_push_down.png" width="48%">
 </p>
-<p align="center"><em>Cosine bump in the road</em> &nbsp;&middot;&nbsp; <em>Hold and release body 2cm down</em></p>
+<p align="center"><em>Cosine bump in the road</em> | <em>Hold and release body 2cm down</em></p>
 
 Finally, the sim calculates the body’s frequency, RMS body acceleration, and peak body acceleration.
 
@@ -300,13 +300,13 @@ The plotting and calculations are the same as the passive sim.
   <img src="Images/skyhook_cos_bump_2175.png" width="48%">
   <img src="Images/skyhook_cos_bump_3972.png" width="48%">
 </p>
-<p align="center"><em>Cosine bump with 0.7 effective damping ratio</em> &nbsp;&middot;&nbsp; <em>Cosine bump with 1.0 effective damping ratio</em></p>
+<p align="center"><em>Cosine bump with 0.7 effective damping ratio</em> | <em>Cosine bump with 1.0 effective damping ratio</em></p>
 
 <p align="center">
   <img src="Images/skyhook_2cm_push_down_2175.png" width="48%">
   <img src="Images/skyhook_2cm_push_down_3972.png" width="48%">
 </p>
-<p align="center"><em>Hold and release 2cm down with 0.7 effective damping ratio</em> &nbsp;&middot;&nbsp; <em>Hold and release 2cm down with 1.0 effective damping ratio</em></p>
+<p align="center"><em>Hold and release 2cm down with 0.7 effective damping ratio</em> | <em>Hold and release 2cm down with 1.0 effective damping ratio</em></p>
 
 Compare these plots and results to the plots of the passive baseline:
 
@@ -315,7 +315,7 @@ Compare these plots and results to the plots of the passive baseline:
   <img src="Images/passive_cos_bump.png" width="48%">
   <img src="Images/passive_2cm_push_down.png" width="48%">
 </p>
-<p align="center"><em>Passive baseline: cosine bump in the road</em> &nbsp;&middot;&nbsp; <em>Passive baseline: hold and release body 2cm down</em></p>
+<p align="center"><em>Passive baseline: cosine bump in the road</em> | <em>Passive baseline: hold and release body 2cm down</em></p>
 
 Clearly the skyhook controls dampen the movements a lot. The RMS and peak body acceleration also drops too.
 
@@ -470,13 +470,13 @@ This code yields a plot of the road that we can see:
   <img src="phase1_writeup_images/Seed40_road.png" width="48%">
   <img src="phase1_writeup_images/Seed41_road.png" width="48%">
 </p>
-<p align="center"><em>Seed=40</em> &nbsp;&middot;&nbsp; <em>Seed=41</em></p>
+<p align="center"><em>Seed=40</em> | <em>Seed=41</em></p>
 
 <p align="center">
   <img src="phase1_writeup_images/Seed42_road.png" width="48%">
   <img src="phase1_writeup_images/Seed43_road.png" width="48%">
 </p>
-<p align="center"><em>Seed=42</em> &nbsp;&middot;&nbsp; <em>Seed=43</em></p>
+<p align="center"><em>Seed=42</em> | <em>Seed=43</em></p>
 
 ### Using the Road Generator in the Main Sim
 
@@ -492,7 +492,7 @@ Here are the results on a class C roads that span 400m:
   <img src="Images/100kph_seed41_skyhook_2175.png" width="32%">
   <img src="Images/100kph_seed41_skyhook_3972.png" width="32%">
 </p>
-<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=1.0</em></p>
+<p align="center"><em>Passive</em> | <em>Skyhook: damping ratio=0.7</em> | <em>Skyhook: damping ratio=1.0</em></p>
 
 #### Seed=42, Speed=100km/hr
 
@@ -500,7 +500,7 @@ Here are the results on a class C roads that span 400m:
   <img src="Images/100kph_seed42_passive.png" width="48%">
   <img src="Images/100kph_seed42_skyhook_2175.png" width="48%">
 </p>
-<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em></p>
+<p align="center"><em>Passive</em> | <em>Skyhook: damping ratio=0.7</em></p>
 
 #### Seed=43, Speed=100km/hr
 
@@ -508,7 +508,7 @@ Here are the results on a class C roads that span 400m:
   <img src="Images/100kph_seed43_passive.png" width="48%">
   <img src="Images/100kph_seed43_skyhook_2175.png" width="48%">
 </p>
-<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em></p>
+<p align="center"><em>Passive</em> | <em>Skyhook: damping ratio=0.7</em></p>
 
 #### Seed=41, Speed=50km/hr
 
@@ -516,7 +516,7 @@ Here are the results on a class C roads that span 400m:
   <img src="Images/50kph_seed41_passive.png" width="48%">
   <img src="Images/50kph_seed41_skyhook_2175.png" width="48%">
 </p>
-<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em></p>
+<p align="center"><em>Passive</em> | <em>Skyhook: damping ratio=0.7</em></p>
 
 We can now simulate real roads according to the ISO8608 standard, and see the improvements to comfort (RMS accel.).
 
@@ -655,7 +655,7 @@ From this we can clearly see that there is a significant improvement in comfort 
 
 # 7. Animating Passive vs. Active Systems
 
-# My Animation
+### My Animation
 
 https://github.com/BenjaminTP/Active-Suspension-Project/blob/main/animation.py
 
@@ -665,7 +665,7 @@ I wrote up an animation sim linked above. This shows how the body (orange), whee
   <img src="Images/classC_road.gif" width="48%">
   <img src="Images/resonance_road.gif" width="48%">
 </p>
-<p align="center"><em>Class-C road</em> &nbsp;&middot;&nbsp; <em>Resonance Road</em></p>
+<p align="center"><em>Class-C road</em> | <em>Resonance Road</em></p>
 
 Notice the big difference that skyhook control adds here. This truly visualizes the calcs we have been doing all along.
 
