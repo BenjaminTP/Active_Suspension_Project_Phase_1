@@ -15,8 +15,10 @@ For phase 1, these were the overarching tasks that I will go through:
 I originally looked up the classic derivation of the system, however was unsatisfied by the lack of explanation as to why gravity could be ignored, and some hand waving that most tutorials showed. So I decided to derive them from first principles.
 
 Here is the FBD for the derivation:
-![Free Body Diagram](phase1_writeup_images/FBD.png)
-*Note that the FBDs on the right show the forces when the masses are moving upward. The directions of the force change depending on direction of motion. Also note that each mass does have gravity acting downward, but the vector is not drawn in.*
+<p align="center">
+  <img src="phase1_writeup_images/FBD.png" width="55%"><br>
+  <em>Note that the FBDs on the right show the forces when the masses are moving upward. The directions of the force change depending on direction of motion. Also note that each mass does have gravity acting downward, but the vector is not drawn in.</em>
+</p>
 
 The damper force $F_2$ is simply proportional to the velocity of the masses:
 
@@ -27,47 +29,45 @@ $$
 Take the absolute coordinates of the masses as $X_1, X_2$ and the unstretched/compressed lengths of the springs to be $l_1, l_2$. From this we can derive the spring forces. Forces on mass 2 are:
 
 $$
+\begin{gathered}
 F_1=k_2(X_2-X_1-l_2)\\
-
 m_2\ddot{x}_2=-F_1-F_2-m_2g\\
-
-m_2\ddot{x}_2=-k_2(X_2-X_1-l_2)-F_2-m_2g\\ \ \\
+m_2\ddot{x}_2=-k_2(X_2-X_1-l_2)-F_2-m_2g
+\end{gathered}
 $$
 
 At Equilibrium:
 
 $$
+\begin{gathered}
 \ddot{x}_2=\dot{x}_2=\dot{x}_1=0,\  X_2=X_{2,eq},\ X_1=X_{1,eq}\\ \ \\
-
-\Rightarrow m_2g=-k_2(X_{2,eq}-X_{1,eq}-l_2) \\ \ \\
-
+\Rightarrow m_2g=-k_2(X_{2,eq}-X_{1,eq}-l_2)
+\end{gathered}
 $$
 
 Now if the system is in motion, $X_2=X_{2,eq}+x_2,\ X_1=X_{1,eq}+x_1$, which is just saying some deviation from equilibrium. From here, we know the system is in motion, so acceleration and velocities are back:
 
 $$
+\begin{gathered}
 m_2\ddot{x}_2=-k_2((X_{2,eq}+x_2)-(X_{1,eq}+x_1)-l_2)-F_2-m_2g\\ 
-
 m_2\ddot{x}_2=-k_2(X_{2,eq}-X_{1,eq}-l_2+x_2-x_1)-F_2-m_2g\\ 
-
 m_2\ddot{x}_2=-k_2(X_{2,eq}-X_{1,eq}-l_2)-k_2(x_2-x_1)-F_2-m_2g\\ \ \\
-
 m_2g=-k_2(X_{2,eq}-X_{1,eq}-l_2),\ (From\ Above) \\ \Rightarrow m_2\ddot{x}_2=\cancel{-k_2(X_{2,eq}-X_{1,eq}-l_2)}-k_2(x_2-x_1)-F_2\cancel{-m_2g}\\
-
 \therefore m_2\ddot{x}_2=-k_2(x_2-x_1)-b(\dot{x}_2-\dot{x}_1)
+\end{gathered}
 $$
 
 If we also take into account that the road is moving, we can write absolute coordinate of it as $X_r$. The forces on mass one are:
 
 $$
+\begin{gathered}
 F_1=k_2(X_2-X_1-l_2)\\
-
 F_3=k_1(X_1-X_r-l_1)\\
-
-m_1\ddot{x}_1=k_2(X_2-X_1-l_2)+F_2-k_1(X_1-X_r-l_1)-m_1g\\
+m_1\ddot{x}_1=k_2(X_2-X_1-l_2)+F_2-k_1(X_1-X_r-l_1)-m_1g
+\end{gathered}
 $$
 
-At equilibrium: $\ddot{x}_1=\dot{x}_1=\dot{x}_2=0$, and $X_1=X_{1,eq}, X_2=X_{2,eq}, X_r=X_{r,eq}$
+At equilibrium: $\ddot x_1=\dot x_1=\dot x_2=0$, and $X_1=X_{1,eq}, X_2=X_{2,eq}, X_r=X_{r,eq}$
 
 $$
 k_2(X_{2,eq}-X_{1,eq}-l_2)-k_1(X_{1,eq}-X_{r,eq}-l_1)=m_1g
@@ -76,29 +76,30 @@ $$
 In motion, velocities and accelerations are back, and $X_1=X_{1,eq}+x_1, X_2=X_{2,eq}+x_2, X_r=X_{r,eq}+x_r$. From here we can solve:
 
 $$
+\begin{gathered}
 m_1\ddot{x}_1=k_2((X_{2,eq}+x_2)-(X_{1,eq}+x_1)-l_2)+F_2-k_1((X_{1,eq}+x_1)-(X_{r,eq}+x_r)-l_1)-m_1g \\ \ \\
-
 m_1\ddot{x}_1=k_2(X_{2,eq}-X_{1,eq}-l_2+x_2-x_1)+F_2-k_1(X_{1,eq}-X_{r,eq}-l_1+x_1-x_r)-m_1g \\ \ \\
-
 m_1\ddot{x}_1=k_2(X_{2,eq}-X_{1,eq}-l_2)+k_2(x_2-x_1)+F_2-k_1(X_{1,eq}-X_{r,eq}-l_1)-k_1(x_1-x_r)-m_1g
+\end{gathered}
 $$
 
 From earlier:
 
 $$
+\begin{gathered}
 k_2(X_{2,eq}-X_{1,eq}-l_2)-k_1(X_{1,eq}-X_{r,eq}-l_1)=m_1g\\ \ \\
-
 \Rightarrow m_1\ddot{x}_1=\cancel{k_2(X_{2,eq}-X_{1,eq}-l_2)}+k_2(x_2-x_1)+F_2\cancel{-k_1(X_{1,eq}-X_{r,eq}-l_1)}-k_1(x_1-x_r)\cancel{-m_1g}\\ \ \\
-
 \therefore m_1\ddot{x}_1=k_2(x_2-x_1)+b(\dot{x}_2-\dot{x}_1)-k_1(x_1-x_r)
+\end{gathered}
 $$
 
 The final equations of motion are:
 
 $$
+\begin{gathered}
 m_1\ddot{x}_1=k_2(x_2-x_1)+b(\dot{x}_2-\dot{x}_1)-k_1(x_1-x_r)\\
-
 m_2\ddot{x}_2=-k_2(x_2-x_1)-b(\dot{x}_2-\dot{x}_1)
+\end{gathered}
 $$
 
 It is worth noting that each $x_1, x_2, x_r$ is measured from the equilibrium position, as that is how we got the cancellations of $m_1g$ and $m_2g$.
@@ -107,9 +108,10 @@ It is worth noting that each $x_1, x_2, x_r$ is measured from the equilibrium po
 Earlier we derived these equations of motion:
 
 $$
+\begin{gathered}
 m_1\ddot{x}_1=k_2(x_2-x_1)+b(\dot{x}_2-\dot{x}_1)-k_1(x_1-x_r)\\
-
 m_2\ddot{x}_2=-k_2(x_2-x_1)-b(\dot{x}_2-\dot{x}_1)
+\end{gathered}
 $$
 
 We need to choose the parameters $m_1, m_2, k_1, k_2$, and $b$.
@@ -137,26 +139,24 @@ $$
 Also from Gillespie, we know that ride rate is: $RR=\frac{k_1k_2}{k_1+k_2}$(both springs in series) and $\omega_n=\sqrt{\frac{RR}{m_2}}$, literally just $f_n=\frac{1}{2\pi}\sqrt{\frac{k}{m}}$. We can find $k_2$ like this:
 
 $$
+\begin{gathered}
 \omega_n=\sqrt{\frac{RR}{m_2}} \Rightarrow RR=m_2\omega_n^2\\
-
 RR=\frac{k_1k_2}{k_1+k_2} \Rightarrow \frac{k_1k_2}{k_1+k_2}=m_2\omega_n^2\\ \ \\
-
 k_1k_2=m_2\omega_n^2(k_1+k_2)\\
-
 k_1k_2=m_2\omega_n^2k_1+m_2\omega_n^2k_2\\
-
 k_1k_2-m_2\omega_n^2k_2=m_2\omega_n^2k_1\\
-
 k_2(k_1-m_2\omega_n^2)=m_2\omega_n^2k_1\\
-
 k_2=\frac{m_2\omega_n^2k_1}{k_1-m_2\omega_n^2}
+\end{gathered}
 $$
 
 Substituting in $m_w, w_n$, and $k_1$ gives us the two spring stiffnesses:
 
 $$
+\begin{gathered}
 k_1=225000N/m\\
 k_2=23550N/m
+\end{gathered}
 $$
 
 ### Finding $b$
@@ -174,11 +174,11 @@ $$
 Using the equation for natural frequency we can check what they are for each spring-mass system:
 
 $$
+\begin{gathered}
 f_n=\frac{1}{2\pi}\sqrt{\frac{k}{m}}\\ \ \\
-
 f_{n,2}=\frac{1}{2\pi}\sqrt{\frac{RR}{m_2}}=1.2Hz\\
-
 f_{n,1}=\frac{1}{2\pi}\sqrt{\frac{k_1+k_2}{m_1}}=14.50Hz
+\end{gathered}
 $$
 
 According to Gillespie, $f_{n,2}$ should be between 1-1.5Hz, and we have hit that. Gillespie also gives a range of 10-15Hz for $f_{n,1}$ which we have also hit.
@@ -195,9 +195,11 @@ This link is to the that will solve the EOM, and return $x_1(t), x_2(t), v_1(t)$
 The sim will then plot the motion of body and wheel, as well as the body acceleration like across time:
 
 
-![passive_cos_bump.png](Images/passive_cos_bump.png)*Cosine bump in the road*
-
-![passive_2cm_push_down.png](Images/passive_2cm_push_down.png)*Hold and release body 20cm down*
+<p align="center">
+  <img src="Images/passive_cos_bump.png" width="48%">
+  <img src="Images/passive_2cm_push_down.png" width="48%">
+</p>
+<p align="center"><em>Cosine bump in the road</em> &nbsp;&middot;&nbsp; <em>Hold and release body 2cm down</em></p>
 
 Finally, the sim calculates the body’s frequency, RMS body acceleration, and peak body acceleration.
 
@@ -212,9 +214,10 @@ The passive baseline will still have oscillations, but we want to dampen those c
 From the EOM, we can add a force $F_a$ as an internal force pair:
 
 $$
+\begin{gathered}
 m_1\ddot{x}_1=k_2(x_2-x_1)+b(\dot{x}_2-\dot{x}_1)-k_1(x_1-x_r) - F_a\\
-
 m_2\ddot{x}_2=-k_2(x_2-x_1)-b(\dot{x}_2-\dot{x}_1)+F_a
+\end{gathered}
 $$
 
 Summing the EOM will show that those forces end up cancelling as expected.
@@ -228,9 +231,10 @@ $$
 We want to get close to critically damping $m_2$, and to do that we need to find $c_c$ (critical damping coefficient) as such:
 
 $$
+\begin{gathered}
 c_c=2\sqrt{km}\\ 
-
 \Rightarrow c_c=2\sqrt{\frac{k_1k_2m_2}{k_1+k_2}}
+\end{gathered}
 $$
 
 Using our previously derived parameters, we find:
@@ -242,9 +246,10 @@ $$
 Knowing this, we can tweak our numbers to get a total damping ratio $(\zeta_{effective})$ of 0.7, as per textbook damping rules:
 
 $$
+\begin{gathered}
 \zeta_{effective}\cdot c_c=3958N\cdot s/m\\
-
-\therefore c_{sky}=3958-b=2175N\cdot s/m\\
+\therefore c_{sky}=3958-b=2175N\cdot s/m
+\end{gathered}
 $$
 
 We can also find our force required from the actuator, which will be:
@@ -253,7 +258,7 @@ $$
 F_a(t)=-2175\cdot \dot{x}_2(t)
 $$
 
-To find the peak force, we know this will come when $\dot{x}_2$ is at its peak. For anything moving in a sinusoidal pattern ($x(t)=A\sin(\omega t + \phi)$, where $A$ is amplitude, and $\omega$ is frequency in rad/s), the peak can be found by taking the derivative: 
+To find the peak force, we know this will come when $\dot x_2$ is at its peak. For anything moving in a sinusoidal pattern ($x(t)=A\sin(\omega t + \phi)$, where $A$ is amplitude, and $\omega$ is frequency in rad/s), the peak can be found by taking the derivative: 
 
 $$
 x(t)=A\sin(\omega t+\phi) \Rightarrow \dot{x}(t)=A\omega\cos(\omega t+\phi)
@@ -262,13 +267,12 @@ $$
 We know the peak of $\cos(t)$ will always be 1, so the actual peak must be $A\omega$. We also know that the largest movements will come at resonance $f_n$, which is 1.2Hz from when we picked the parameters. Assuming a body amplitude of 20mm, we know that the peak velocity will be:
 
 $$
+\begin{gathered}
 f_{n,2}=1.2Hz\\
-
 \Rightarrow \omega_{n,2}=1.2\cdot2\pi=7.54rad/s\\
-
 \dot{x}_{peak}=0.151m/s\\ \ \\
-
 \therefore \lvert F_{peak} \rvert=328.4N
+\end{gathered}
 $$
 
 From $F_{peak}$, we can size out an actuator that will work.
@@ -292,20 +296,26 @@ def deriv(t, y):
 
 The plotting and calculations are the same as the passive sim.
 
-![skyhook_cos_bump_2175.png](Images/skyhook_cos_bump_2175.png)*Cosine bump with 0.7 effective damping ratio*
+<p align="center">
+  <img src="Images/skyhook_cos_bump_2175.png" width="48%">
+  <img src="Images/skyhook_cos_bump_3972.png" width="48%">
+</p>
+<p align="center"><em>Cosine bump with 0.7 effective damping ratio</em> &nbsp;&middot;&nbsp; <em>Cosine bump with 1.0 effective damping ratio</em></p>
 
-![skyhook_2cm_push_down_2175.png](Images/skyhook_2cm_push_down_2175.png)*Hold and release 20cm down with 0.7 effective damping ratio*
-
-![skyhook_cos_bump_3972.png](Images/skyhook_cos_bump_3972.png)*Cosine bump with 1.0 effective damping ratio*
-
-![skyhook_2cm_push_down_3972.png](Images/skyhook_2cm_push_down_3972.png)*Hold and release 20cm down with 1.0 effective damping ratio*
+<p align="center">
+  <img src="Images/skyhook_2cm_push_down_2175.png" width="48%">
+  <img src="Images/skyhook_2cm_push_down_3972.png" width="48%">
+</p>
+<p align="center"><em>Hold and release 2cm down with 0.7 effective damping ratio</em> &nbsp;&middot;&nbsp; <em>Hold and release 2cm down with 1.0 effective damping ratio</em></p>
 
 Compare these plots and results to the plots of the passive baseline:
 
 
-![passive_cos_bump.png](Images/passive_cos_bump.png)*Passive baseline: cosine bump in the road*
-
-![passive_2cm_push_down.png](Images/passive_2cm_push_down.png)*Passive baseline: hold and release body 20cm down*
+<p align="center">
+  <img src="Images/passive_cos_bump.png" width="48%">
+  <img src="Images/passive_2cm_push_down.png" width="48%">
+</p>
+<p align="center"><em>Passive baseline: cosine bump in the road</em> &nbsp;&middot;&nbsp; <em>Passive baseline: hold and release body 2cm down</em></p>
 
 Clearly the skyhook controls dampen the movements a lot. The RMS and peak body acceleration also drops too.
 
@@ -317,7 +327,9 @@ The core idea is that any road can be represented as a sum of waves using the FF
 
 The interesting bit is that when plotting $G_d(n)$ from real data on a log-log graph, the road data kept following this straight line trend with slope of -2. This is how the ISO8608 standard was born, and from this, we can classify road types as by following this graph:
 
-![Displacement PSD vs. Spatial Frequency](phase1_writeup_images/ISO8608_classes_plot.png)
+<p align="center">
+  <img src="phase1_writeup_images/ISO8608_classes_plot.png" width="60%">
+</p>
 
 Looking at this chart, we can see that the frequency domain is $n\in[10^{-2},2]$, which will become useful when picking which frequencies to generate the road from. The full equation of the line is:
 
@@ -355,6 +367,7 @@ One thing that threw me off in this derivation is that each wave carries with it
 We the work with the variance (AKA power) of an arbitrary sine wave, which can be derived as such:
 
 $$
+\begin{gathered}
 Var(A\cdot\sin(\omega t + \phi))\equiv\frac{1}{T}\int_0^T(A\cdot\sin(\omega t +\phi))^2dt\\ \ \\
 =\frac{1}{T}\int_0^TA^2\sin^2(\omega t+\phi)dt\\
 u=\omega t +\phi \Rightarrow\frac{1}{T}\int_0^TA^2\sin^2(\omega t+\phi)dt=\frac{A^2}{T}\cdot\int_\phi^{\omega T +\phi}\sin^2(u)\frac{1}{\omega} du\\
@@ -368,14 +381,17 @@ T=\frac{2\pi}{\omega} \Rightarrow =\frac{A^2}{4\pi}\cdot\left[ 2\pi-\frac{\sin(4
 =\frac{A^2}{4\pi}\cdot\left[ 2\pi-\frac{\cancel{\sin(2\phi)}\cancel{-\sin(2\phi)}}{2}\right]\\
 =\frac{A^2}{4\pi}\cdot2\pi\\
 \therefore Var(A\cdot\sin(\omega t + \phi))=\frac{A^2}{2}
+\end{gathered}
 $$
 
 Since power and variance are the same thing, we can follow up with:
 
 $$
+\begin{gathered}
 power(n_i)=G_d(n_i)\triangle n, Var(A\cdot \sin(\omega t+\phi))=\frac{A^2}{2}\\ \ \\
 Var(A\cdot\sin(\omega t+\phi))=power(n_i)\Rightarrow \frac{A_i^2}{2}=G_d(n_i)\triangle n\\
 A_i=\sqrt{2G_d(n_i)\triangle n}
+\end{gathered}
 $$
 
 This it the formula that we need, an amplitude for some frequency $n_i$. From here, we can construct every wave $(f(x))$, as a function of amplitude, frequency, and a phase shift:
@@ -450,17 +466,17 @@ def main():
 
 This code yields a plot of the road that we can see: 
 
-![Seed 40 road](phase1_writeup_images/Seed40_road.png)
-*Seed=40*
+<p align="center">
+  <img src="phase1_writeup_images/Seed40_road.png" width="48%">
+  <img src="phase1_writeup_images/Seed41_road.png" width="48%">
+</p>
+<p align="center"><em>Seed=40</em> &nbsp;&middot;&nbsp; <em>Seed=41</em></p>
 
-![Seed 41 road](phase1_writeup_images/Seed41_road.png)
-*Seed=41*
-
-![Seed 42 road](phase1_writeup_images/Seed42_road.png)
-*Seed=42*
-
-![Seed 43 road](phase1_writeup_images/Seed43_road.png)
-*Seed=43*
+<p align="center">
+  <img src="phase1_writeup_images/Seed42_road.png" width="48%">
+  <img src="phase1_writeup_images/Seed43_road.png" width="48%">
+</p>
+<p align="center"><em>Seed=42</em> &nbsp;&middot;&nbsp; <em>Seed=43</em></p>
 
 ### Using the Road Generator in the Main Sim
 
@@ -471,38 +487,36 @@ Using the skyhook sim from earlier, we can integrate the road generator. One maj
 Here are the results on a class C roads that span 400m:
 
 #### Seed=41, Speed=100km/hr
-![100kph_seed41_passive.png](Images/100kph_seed41_passive.png)
-*Passive*
-
-![100kph_seed41_skyhook_2175.png](Images/100kph_seed41_skyhook_2175.png)
-*Skyhook: damping ratio=0.7*
-
-![100kph_seed41_skyhook_3972.png](Images/100kph_seed41_skyhook_3972.png)
-*Skyhook: damping ratio=1.0*
+<p align="center">
+  <img src="Images/100kph_seed41_passive.png" width="32%">
+  <img src="Images/100kph_seed41_skyhook_2175.png" width="32%">
+  <img src="Images/100kph_seed41_skyhook_3972.png" width="32%">
+</p>
+<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=1.0</em></p>
 
 #### Seed=42, Speed=100km/hr
 
-![100kph_seed42_passive.png](Images/100kph_seed42_passive.png)
-*Passive*
-
-![100kph_seed42_skyhook_2175.png](Images/100kph_seed42_skyhook_2175.png)
-*Skyhook: damping ratio=0.7*
+<p align="center">
+  <img src="Images/100kph_seed42_passive.png" width="48%">
+  <img src="Images/100kph_seed42_skyhook_2175.png" width="48%">
+</p>
+<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em></p>
 
 #### Seed=43, Speed=100km/hr
 
-![100kph_seed43_passive.png](Images/100kph_seed43_passive.png)
-*Passive*
-
-![100kph_seed43_skyhook_2175.png](Images/100kph_seed43_skyhook_2175.png)
-*Skyhook: damping ratio=0.7*
+<p align="center">
+  <img src="Images/100kph_seed43_passive.png" width="48%">
+  <img src="Images/100kph_seed43_skyhook_2175.png" width="48%">
+</p>
+<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em></p>
 
 #### Seed=41, Speed=50km/hr
 
-![50kph_seed41_passive.png](Images/50kph_seed41_passive.png)
-*Passive*
-
-![50kph_seed41_skyhook_2175.png](Images/50kph_seed41_skyhook_2175.png)
-*Skyhook: damping ratio=0.7*
+<p align="center">
+  <img src="Images/50kph_seed41_passive.png" width="48%">
+  <img src="Images/50kph_seed41_skyhook_2175.png" width="48%">
+</p>
+<p align="center"><em>Passive</em> &nbsp;&middot;&nbsp; <em>Skyhook: damping ratio=0.7</em></p>
 
 We can now simulate real roads according to the ISO8608 standard, and see the improvements to comfort (RMS accel.).
 
@@ -510,87 +524,123 @@ We can now simulate real roads according to the ISO8608 standard, and see the im
 
 All the sims I have been building so far are great and all, but useless unless we do a lot of testing. For example, we could keep reducing the RMS body acceleration, but there will always be tradeoffs, however, what are those tradeoffs?
 
-The three major tradeoffs are the peak suspension travel $\max(\lvert x_2-x_1\rvert)$, peak tire deflection $\max(\lvert x_1 - x_r \rvert)$, and peak actuator force $\max(\lvert c_{sky}\cdot\dot{x}_2 \rvert)$. These matter, because they govern the dimensions and of tires, suspension, and actuators. These are very easy to implement into the sim that we have https://github.com/BenjaminTP/Active-Suspension-Project/blob/main/full_testing_benchmark.py. Here are the test cases and results:
+The three major tradeoffs are the peak suspension travel $\max(\lvert x_2-x_1\rvert)$, peak tire deflection $\max(\lvert x_1 - x_r \rvert)$, and peak actuator force $\max(\lvert c_{sky}\cdot\dot x_2 \rvert)$. These matter, because they govern the dimensions and of tires, suspension, and actuators. These are very easy to implement into the sim that we have https://github.com/BenjaminTP/Active-Suspension-Project/blob/main/full_testing_benchmark.py. Here are the test cases and results:
 
-### Test 1
-![Test 1](Images/test1.png)
-*Class-C Road, Passive, Start at Rest*
+### Test 1 & Test 2
 
-RMS Body Acceleration: 1.675 m/s^2
-Peak Body Acceleration: 7.043 m/s^2
-Peak Suspension Travel: 38.230mm
-Peak Tire Deflection: 15.126mm
+<table>
+<tr>
+<td width="50%"><img src="Images/test1.png" width="100%"></td>
+<td width="50%"><img src="Images/test2.png" width="100%"></td>
+</tr>
+<tr>
+<td align="center"><em>Class-C Road, Passive, Start at Rest</em></td>
+<td align="center"><em>Class-C Road, Skyhook (0.7), Start at Rest</em></td>
+</tr>
+<tr>
+<td>
+RMS Body Acceleration: 1.675 m/s^2<br>
+Peak Body Acceleration: 7.043 m/s^2<br>
+Peak Suspension Travel: 38.230mm<br>
+Peak Tire Deflection: 15.126mm<br>
 Peak Actuator Force: 0.0N
-
-### Test 2
-![Test 2](Images/test2.png)
-*Class-C Road, Skyhook (0.7), Start at Rest*
-
-RMS Body Acceleration: 1.515 m/s^2
-Peak Body Acceleration: 5.761 m/s^2
-Peak Suspension Travel: 31.288mm
-Peak Tire Deflection: 14.333mm
+</td>
+<td>
+RMS Body Acceleration: 1.515 m/s^2<br>
+Peak Body Acceleration: 5.761 m/s^2<br>
+Peak Suspension Travel: 31.288mm<br>
+Peak Tire Deflection: 14.333mm<br>
 Peak Actuator Force: 466.8N
+</td>
+</tr>
+</table>
 
-### Test 3
-![Test 3](Images/test3.png)
-*5cm Bump Road, Passive, Start at Rest*
+### Test 3 & Test 4
 
-RMS Body Acceleration: 0.970 m/s^2
-Peak Body Acceleration: 4.948 m/s^2
-Peak Suspension Travel: 38.676mm
-Peak Tire Deflection: 8.945mm
+<table>
+<tr>
+<td width="50%"><img src="Images/test3.png" width="100%"></td>
+<td width="50%"><img src="Images/test4.png" width="100%"></td>
+</tr>
+<tr>
+<td align="center"><em>5cm Bump Road, Passive, Start at Rest</em></td>
+<td align="center"><em>5cm Bump Road, Skyhook (0.7), Start at Rest</em></td>
+</tr>
+<tr>
+<td>
+RMS Body Acceleration: 0.970 m/s^2<br>
+Peak Body Acceleration: 4.948 m/s^2<br>
+Peak Suspension Travel: 38.676mm<br>
+Peak Tire Deflection: 8.945mm<br>
 Peak Actuator Force: 0.0N
-
-### Test 4
-![Test 4](Images/test4.png)
-*5cm Bump Road, Skyhook (0.7), Start at Rest*
-
-RMS Body Acceleration: 0.851 m/s^2
-Peak Body Acceleration: 4.902 m/s^2
-Peak Suspension Travel: 41.561mm
-Peak Tire Deflection: 8.780mm
+</td>
+<td>
+RMS Body Acceleration: 0.851 m/s^2<br>
+Peak Body Acceleration: 4.902 m/s^2<br>
+Peak Suspension Travel: 41.561mm<br>
+Peak Tire Deflection: 8.780mm<br>
 Peak Actuator Force: 559.0N
+</td>
+</tr>
+</table>
 
-### Test 5
-![Test 5](Images/test5.png)
-*Flat Road, Passive, Start Body 8cm Down*
+### Test 5 & Test 6
 
-RMS Body Acceleration: 0.955 m/s^2
-Peak Body Acceleration: 5.024 m/s^2
-Peak Suspension Travel: 80.000mm
-Peak Tire Deflection: 9.445mm
+<table>
+<tr>
+<td width="50%"><img src="Images/test5.png" width="100%"></td>
+<td width="50%"><img src="Images/test6.png" width="100%"></td>
+</tr>
+<tr>
+<td align="center"><em>Flat Road, Passive, Start Body 8cm Down</em></td>
+<td align="center"><em>Flat Road, Skyhook (0.7), Start Body 8cm Down</em></td>
+</tr>
+<tr>
+<td>
+RMS Body Acceleration: 0.955 m/s^2<br>
+Peak Body Acceleration: 5.024 m/s^2<br>
+Peak Suspension Travel: 80.000mm<br>
+Peak Tire Deflection: 9.445mm<br>
 Peak Actuator Force: 0.0N
-
-### Test 6
-![Test 6](Images/test6.png)
-*Flat Road, Skyhook (0.7), Start Body 8cm Down*
-
-RMS Body Acceleration: 0.596 m/s^2
-Peak Body Acceleration: 3.810 m/s^2
-Peak Suspension Travel: 78.954mm
-Peak Tire Deflection: 8.782mm
+</td>
+<td>
+RMS Body Acceleration: 0.596 m/s^2<br>
+Peak Body Acceleration: 3.810 m/s^2<br>
+Peak Suspension Travel: 78.954mm<br>
+Peak Tire Deflection: 8.782mm<br>
 Peak Actuator Force: 663.2N
+</td>
+</tr>
+</table>
 
-### Test 7
-![Test 7](Images/test7.png)
-*Resonating Road, Passive, Start at Rest*
+### Test 7 & Test 8
 
-RMS Body Acceleration: 0.870 m/s^2
-Peak Body Acceleration: 1.233 m/s^2
-Peak Suspension Travel: 17.139mm
-Peak Tire Deflection: 2.111mm
+<table>
+<tr>
+<td width="50%"><img src="Images/test7.png" width="100%"></td>
+<td width="50%"><img src="Images/test8.png" width="100%"></td>
+</tr>
+<tr>
+<td align="center"><em>Resonating Road, Passive, Start at Rest</em></td>
+<td align="center"><em>Resonating Road, Skyhook (0.7), Start at Rest</em></td>
+</tr>
+<tr>
+<td>
+RMS Body Acceleration: 0.870 m/s^2<br>
+Peak Body Acceleration: 1.233 m/s^2<br>
+Peak Suspension Travel: 17.139mm<br>
+Peak Tire Deflection: 2.111mm<br>
 Peak Actuator Force: 0.0N
-
-### Test 8
-![Test 8](Images/test8.png)
-*Resonating Road, Skyhook (0.7), Start at Rest*
-
-RMS Body Acceleration: 0.373 m/s^2
-Peak Body Acceleration: 0.528 m/s^2
-Peak Suspension Travel: 9.334mm
-Peak Tire Deflection: 0.926mm
+</td>
+<td>
+RMS Body Acceleration: 0.373 m/s^2<br>
+Peak Body Acceleration: 0.528 m/s^2<br>
+Peak Suspension Travel: 9.334mm<br>
+Peak Tire Deflection: 0.926mm<br>
 Peak Actuator Force: 155.6N
+</td>
+</tr>
+</table>
 
 ## Reduction Percentages
 
@@ -611,11 +661,11 @@ https://github.com/BenjaminTP/Active-Suspension-Project/blob/main/animation.py
 
 I wrote up an animation sim linked above. This shows how the body (orange), wheel (blue), and road (grey) move over time. On top is the passive system, and the bottom shows the active variation.
 
-![Class-C Road Gif](Images/classC_road.gif)
-*Class-C road*
-
-![Resonance Road Gif](Images/resonance_road.gif)
-*Resonance Road*
+<p align="center">
+  <img src="Images/classC_road.gif" width="48%">
+  <img src="Images/resonance_road.gif" width="48%">
+</p>
+<p align="center"><em>Class-C road</em> &nbsp;&middot;&nbsp; <em>Resonance Road</em></p>
 
 Notice the big difference that skyhook control adds here. This truly visualizes the calcs we have been doing all along.
 
@@ -623,10 +673,16 @@ Notice the big difference that skyhook control adds here. This truly visualizes 
 
 Having never touched animations before, especially with python or HTML, I instructed Claude to take the parameters and calculations I have to build out a more visually appealing version of the simulation, while adding an interactive layer on top, so you are able to draw the road. This is not my work, but it uses my calculations to create a nicer animation. Click the image below:
 
-[![Claude Sim Preview](phase1_writeup_images/claude_sim_preview.png)](https://benjamintp.github.io/Active-Suspension-Project/claude_animation.html)
+<p align="center">
+  <a href="https://benjamintp.github.io/Active-Suspension-Project/claude_animation.html">
+    <img src="phase1_writeup_images/claude_sim_preview.png" width="60%">
+  </a>
+</p>
 
 # Concluding Remarks
 
 There are many different types of active suspension systems, and I only implemented skyhook controls. There are other things I want to add onto the sim, but due to time constraints, I could not do more without sacrificing phase 2. 
 
-Phase 2 will implement a preview control system on top of skyhook into the physical model. I will go back to phase 1 and implement the preview control after hitting my personal deadline for phase 2. 
+Phase 2 will implement a preview control system on top of skyhook into the physical model. I will go back to phase 1 and implement the preview control after hitting my personal deadline for phase 2.
+
+I also want to note that I wrote out this entire markdown file myself, however I used Claude to reformat it for GitHub's renderer since LaTeX and images do not render the same on VSCode and GitHub. I have checked and every single work, equation, and image is the same as my original, just with the images formatted nicely and the LaTeX rendering properly.
