@@ -362,9 +362,11 @@ As for the meaning of the classes themselves, A is a very smooth road, and each 
 
 Ok this is all cool, but how do we even generate a road profile from this information, and how do we make sure it is a class we want?
 
+We have frequencies of each wave, but we still need amplitude and a phase shift. Spoiler alert, the phase shift is just a random number to add a random factor to the road which I explain later on. We really only need amplitude, but all we have is the PSD; we need a way to link PSD to amplitude.
+
 One thing that threw me off in this derivation is that each wave carries with it some power, which is actually the same thing as variance. To get terminology correct, the curve $G_d(n)$ is the rate of power with respect to a frequency. In other words, $\frac{power(n_i)}{dn}=G_d(n_i)$. To get back this power, we simply do this: $power(n_i)=G_d(n_i)\cdot dn$. Since we are using a discrete slice, $power(n_i)=G_d(n_i)\triangle n$.
 
-We the work with the variance (AKA power) of an arbitrary sine wave, which can be derived as such:
+We then work with the variance (AKA power) of an arbitrary sine wave, which can be derived as such:
 
 $$
 \begin{gathered}
