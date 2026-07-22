@@ -1,4 +1,4 @@
-# Active Suspension Project
+# Active Suspension Project Phase 1
 
 ### Purpose
 One day, as I was mindlessly scrolling on my phone, I came across a video of a car seemingly levitating above a road full of bumps. It was absolutely mesmerizing to look at, so I decided to build it myself. Since I do not have the budget to build out a full car, I decided to build out a quarter-car suspension system. 
