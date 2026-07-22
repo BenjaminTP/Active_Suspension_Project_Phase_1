@@ -621,9 +621,9 @@ Notice the big difference that skyhook control adds here. This truly visualizes 
 
 ## Interactive Sim (Claude)
 
-Having never touched animations before, especially with python or HTML, I instructed Claude to take the parameters and calculations I have to build out a more visually appealing version of the simulation, while adding an interactive layer on top, so you are able to draw the road. This is not my work, but it uses my calculations to create a nicer animation.
+Having never touched animations before, especially with python or HTML, I instructed Claude to take the parameters and calculations I have to build out a more visually appealing version of the simulation, while adding an interactive layer on top, so you are able to draw the road. This is not my work, but it uses my calculations to create a nicer animation. Click the image below:
 
-https://github.com/BenjaminTP/Active-Suspension-Project/blob/main/claude_animation.html
+[![Claude Sim Preview](phase1_writeup_images/claude_sim_preview.png)](https://benjamintp.github.io/Active-Suspension-Project/claude_animation.html)
 
 # Concluding Remarks
 
