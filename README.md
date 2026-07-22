@@ -7,7 +7,9 @@ What I initially thought would be a simple project quickly turned into a project
 
 I truly wanted to learn everything about this mesmerizing active suspension system, so I put in a lot of work to understand as much as possible. All the work I present here is my own, and not AI generated, except for one cool visualization at the end which I clearly have labeled as not my own work.
 
-I learned a ton from this project, and I wish to present my full end-to-end engineering process below.
+I learned a ton from this project, and I wish to present my full end-to-end engineering process here.
 
 ### Project Scopes
 I decided to break this project up into two phases: phase 1 would consist of the initial research, learning, and simulations on a quarter car with real-world specs, while phase 2 would physically build out the real-world model based off of the work done in phase 1. 
+
+You are currently on the phase 1 repo. Check out phase1_writeup.md.
