@@ -683,8 +683,8 @@ Having never touched animations before, especially with python or HTML, I instru
 
 # Concluding Remarks
 
-There are many different types of active suspension systems, and I only implemented skyhook controls. There are other things I want to add onto the sim, but due to time constraints, I could not do more without sacrificing phase 2. 
+There are many different types of active suspension system controls, and I only implemented skyhook controls. There are other things I want to add onto the sim, but due to time constraints, I could not do more without sacrificing phase 2. 
 
-Phase 2 will implement a preview control system on top of skyhook into the physical model. I will go back to phase 1 and implement the preview control after hitting my personal deadline for phase 2.
+Phase 2 will implement skyhook controls into a physical rig. If I have enough time, I will also look into implementing LQR and preview control into the phase 1 and 2.
 
 I also want to note that I wrote out this entire markdown file myself, however I used Claude to reformat it for GitHub's renderer since LaTeX and images do not render the same on VSCode and GitHub. I have checked and every single work, equation, and image is the same as my original, just with the images formatted nicely and the LaTeX rendering properly.
